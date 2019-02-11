@@ -10,6 +10,7 @@ public class PSAccountInformation: Mappable {
     public let status: String
     public let accountDescription: String
     public let ibans: [String]
+    public let flags: PSAccountInformationFlags
     
     required public init?(map: Map) {
         do {
@@ -22,6 +23,7 @@ public class PSAccountInformation: Mappable {
             status = try map.value("status")
             accountDescription = try map.value("description")
             ibans = try map.value("ibans")
+            flags = try map.value("flags")
             
         } catch {
             print("\n")
