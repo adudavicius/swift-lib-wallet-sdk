@@ -7,15 +7,14 @@ public class PSWallet: Mappable {
     
     required public init?(map: Map) {
         do {
-            print("\n\n")
-            
             id = try map.value("id")
             ownerId = try map.value("owner")
             accountInformation = try map.value("account")
             
         } catch {
+            print("\n")
             print(error)
-            print("\n\n")
+            print("\n")
             return nil
         }
     }
