@@ -41,7 +41,7 @@ public class WalletAsyncClient: BaseAsyncClient {
         return doRequest(requestRouter: WalletApiRequestRouter.getWallet(id: id))
     }
     
-    public func getWallets(inactiveIncluded: Bool) -> Promise<PSWallet> {
+    public func getWallets(inactiveIncluded: Bool) -> Promise<[PSWallet]> {
         return doRequest(requestRouter: WalletApiRequestRouter.getWallets(inactiveIncluded: inactiveIncluded))
     }
     
