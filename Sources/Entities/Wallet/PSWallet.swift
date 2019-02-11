@@ -10,11 +10,7 @@ public class PSWallet: Mappable {
             id = try map.value("id")
             ownerId = try map.value("owner")
             accountInformation = try map.value("account")
-            
         } catch {
-            print("\n")
-            print(error)
-            print("\n")
             return nil
         }
     }
