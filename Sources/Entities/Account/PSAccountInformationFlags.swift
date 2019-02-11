@@ -1,8 +1,8 @@
 import ObjectMapper
 
 public class PSAccountInformationFlags: Mappable {
-    var `public` = false
-    var savings = false
+    public var `public` = false
+    public var savings = false
     
     required public init?(map: Map) {
     }
