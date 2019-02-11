@@ -8,9 +8,9 @@ public class PSAccountInformation: Mappable {
     public let type: String
     public let userId: Int
     public let status: String
-    public let accountDescription: String
     public let ibans: [String]
     public let flags: PSAccountInformationFlags
+    public var accountDescription: String?
     
     required public init?(map: Map) {
         do {
@@ -21,7 +21,6 @@ public class PSAccountInformation: Mappable {
             type = try map.value("type")
             userId = try map.value("user_id")
             status = try map.value("status")
-            accountDescription = try map.value("description")
             ibans = try map.value("ibans")
             flags = try map.value("flags")
             
@@ -34,5 +33,6 @@ public class PSAccountInformation: Mappable {
     }
     
     public func mapping(map: Map) {
+        accountDescription  <- map["description"]
     }
 }
