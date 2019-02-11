@@ -25,9 +25,6 @@ public class PSAccountInformation: Mappable {
             flags = try map.value("flags")
             
         } catch {
-            print("\n")
-            print(error)
-            print("\n")
             return nil
         }
     }
