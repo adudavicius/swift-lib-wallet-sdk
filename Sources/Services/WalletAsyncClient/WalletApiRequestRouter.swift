@@ -15,7 +15,7 @@ public enum WalletApiRequestRouter: URLRequestConvertible {
     case getCurrentUser()
     case getUser(PSGetUserRequest)
     case getWallet(id: Int)
-    case getWallets(inactiveIncluded: Bool)
+    case getWallets(inactiveIncluded: String)
     case getSpot(id: Int)
     case getTransfer(id: Int)
     
@@ -184,6 +184,7 @@ public enum WalletApiRequestRouter: URLRequestConvertible {
             
         case .checkIn(_, _):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+
             
         case (_) where method == .get,
              (_) where method == .delete:
